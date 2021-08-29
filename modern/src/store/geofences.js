@@ -13,6 +13,10 @@ const { reducer, actions } = createSlice({
     update(state, action) {
       action.payload.forEach((item) => state.items[item.id] = item);
     },
+    select(state,action) {
+      console.log('action: ', action);
+      state.selectedId = action.payload.id;
+    }
   },
 });
 

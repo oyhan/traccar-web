@@ -9,7 +9,7 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-import { devicesActions } from './store';
+import { devicesActions, geofencesActions } from './store';
 import EditCollectionView from './EditCollectionView';
 
 const useStyles = makeStyles(() => ({
@@ -34,7 +34,7 @@ const GeofenceView = ({ onMenuClick }) => {
     <List className={classes.list}>
       {items.map((item, index, list) => (
         <Fragment key={item.id}>
-          <ListItem button key={item.id} onClick={() => dispatch(devicesActions.select(item))}>
+          <ListItem button key={item.id} onClick={() => dispatch(geofencesActions.select(item))}>
             <ListItemText primary={item.name} />
             <ListItemSecondaryAction>
               <IconButton onClick={(event) => onMenuClick(event.currentTarget, item.id)}>
